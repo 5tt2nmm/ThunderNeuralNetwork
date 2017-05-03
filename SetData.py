@@ -16,8 +16,7 @@ connection = cx_Oracle.connect('*****', '*****', '*******/****')
 
 def GetOracleDataSample(CenterLO, CenterLA, StartTime, EndTime, TimeStep,SampleTimecount, SampleCOunt, GridCount, Gridlen):
 
-    for tt in range(0, 5):
-        print tt
+
 
 
     CenterGridStartlo = CenterLO - 0.5 * Gridlen
