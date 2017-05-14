@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 glosql = "select * from thunder2015"
 glocountsql = "select count(*) from thunder2015"
-connection = cx_Oracle.connect('thunder', 'thunder', '159.226.50.119:1521/thunder')
+connection = cx_Oracle.connect('****', '***', '**************:*****/*****')
 glosamplegroupcount1=1000
 glosamplegroupcount2=1000
 glosamplegroupcount3=1000
