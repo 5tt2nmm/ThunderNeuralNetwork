@@ -100,12 +100,12 @@ if __name__ == "__main__":
                     [probs_, state_] = sess.run([probs, last_state],
                                                 feed_dict={input_data: np.array(x_batches[0][0]).reshape(1, 5),
                                                            initial_state: state_})
-                    out = to_word(probs_, datas)
+                    out = GetPredata(probs_, datas)
                     print out
 
 
 
-    def to_word(predict, datas):
+    def GetPredata(predict, datas):
         # t = np.cumsum(predict[len(predict)-1])
         # s = np.sum(predict[len(predict)-1])
         # sample = int(np.searchsorted(t, np.random.rand(1) * s))
