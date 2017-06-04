@@ -43,10 +43,10 @@ if __name__ == "__main__":
 
         with tf.variable_scope('rnnlm'):
             softmax_w = tf.get_variable("softmax_w", [rnn_size, datalen + 1])
-        softmax_b = tf.get_variable("softmax_b", [datalen + 1])
+            softmax_b = tf.get_variable("softmax_b", [datalen + 1])
         with tf.device("/cpu:0"):
             embedding = tf.get_variable("embedding", [datalen + 1, rnn_size])
-        inputs = tf.nn.embedding_lookup(embedding, input_data)
+            inputs = tf.nn.embedding_lookup(embedding, input_data)
 
         outputs, last_state = tf.nn.dynamic_rnn(cell, inputs, initial_state=initial_state, scope='rnnlm')
         output = tf.reshape(outputs, [-1, rnn_size])
@@ -100,12 +100,12 @@ if __name__ == "__main__":
                     [probs_, state_] = sess.run([probs, last_state],
                                                 feed_dict={input_data: np.array(x_batches[0][0]).reshape(1, 5),
                                                            initial_state: state_})
-                    out = to_word(probs_, datas)
+                    out = GetPredata(probs_, datas)
                     print out
 
 
 
-    def to_word(predict, datas):
+    def GetPredata(predict, datas):
         # t = np.cumsum(predict[len(predict)-1])
         # s = np.sum(predict[len(predict)-1])
         # sample = int(np.searchsorted(t, np.random.rand(1) * s))

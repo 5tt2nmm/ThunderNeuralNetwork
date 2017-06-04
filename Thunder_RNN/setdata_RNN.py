@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import time
 import cx_Oracle, datetime
 import math, numpy as np,traceback
@@ -16,7 +15,7 @@ os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
 glosql = "select latitude,longitude  from thunder2015"
 glocountsql = "select count(*) from thunder2015"
-connection = cx_Oracle.connect('****', '***', '**************:*****/*****')
+connection = cx_Oracle.connect('********', '*********', '************:*****/****')
 glosamplegroupcount=5000
 
 
